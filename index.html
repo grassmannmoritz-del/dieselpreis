@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="dieselpreis">
   <title>dieselpreis</title>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -12,15 +12,15 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg: #000000;
-      --card: #111111;
-      --border: rgba(255,255,255,0.1);
-      --accent: #ffffff;
-      --accent2: #aaaaaa;
-      --text: #ffffff;
-      --muted: rgba(255,255,255,0.35);
-      --green: #ffffff;
-      --red: #888888;
+      --bg: #ffffff;
+      --card: #f0f4f8;
+      --border: rgba(0,90,170,0.1);
+      --accent: #005AAA;
+      --accent2: #003d7a;
+      --text: #005AAA;
+      --muted: rgba(0,90,170,0.4);
+      --green: #005AAA;
+      --red: #cc0000;
     }
 
     html, body {
@@ -50,7 +50,7 @@
       transform: translateX(-50%);
       width: 600px;
       height: 600px;
-      background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(0,90,170,0.05) 0%, transparent 70%);
       pointer-events: none;
       z-index: 0;
     }
@@ -83,7 +83,7 @@
       font-family: 'Bebas Neue', sans-serif;
       font-size: 28px;
       letter-spacing: 0.05em;
-      background: linear-gradient(135deg, #ffffff, #aaaaaa);
+      background: linear-gradient(135deg, #005AAA, #003d7a);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -105,7 +105,7 @@
       position: absolute;
       top: 0; left: 0; right: 0;
       height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      background: linear-gradient(90deg, transparent, rgba(0,90,170,0.2), transparent);
     }
 
     .fuel-type {
@@ -220,14 +220,14 @@
     /* Refresh button */
     .refresh-btn {
       width: 100%;
-      background: linear-gradient(135deg, #ffffff, #bbbbbb);
+      background: linear-gradient(135deg, #005AAA, #003d7a);
       border: none;
       border-radius: 16px;
       padding: 18px;
       font-family: 'DM Sans', sans-serif;
       font-size: 15px;
       font-weight: 500;
-      color: #000;
+      color: #ffffff;
       cursor: pointer;
       display: flex;
       align-items: center;
@@ -265,7 +265,7 @@
     /* API Key input */
     .api-setup {
       background: var(--card);
-      border: 1px solid rgba(255,255,255,0.2);
+      border: 1px solid rgba(0,90,170,0.3);
       border-radius: 20px;
       padding: 24px;
       display: flex;
@@ -299,7 +299,7 @@
     }
 
     .api-input:focus {
-      border-color: rgba(255,255,255,0.5);
+      border-color: rgba(0,90,170,0.6);
     }
 
     .api-input::placeholder {
@@ -307,14 +307,14 @@
     }
 
     .save-btn {
-      background: #ffffff;
+      background: #005AAA;
       border: none;
       border-radius: 12px;
       padding: 14px;
       font-family: 'DM Sans', sans-serif;
       font-size: 14px;
       font-weight: 500;
-      color: #000;
+      color: #ffffff;
       cursor: pointer;
       width: 100%;
     }
@@ -350,7 +350,6 @@
     <div style="display:flex; flex-direction:column; gap:20px;">
       <!-- Price card -->
       <div class="price-card fade-in">
-        <div class="fuel-type">Diesel · €/Liter</div>
         <div id="priceDisplay" class="price-loading">– – –</div>
         <div class="status-row">
           <div class="status-dot unknown" id="statusDot"></div>
